@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main-web-server
+  labels:
+    app: main-web-server
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-server
+  template:
+    metadata:
+      labels:
+        app: web-server
+    spec:
+      nodeSelector:
+        workerType: "edgeWorker.rdsea.csc"
+      containers:
+        - name: web-server
+          image: rdsea/edge-ml-inference-web-server:rasp-pi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: PREPROCESSOR_SERVICE_PORT
+              value: "8000"
+            - name: SERVICE_NAME
+              value: "edge-preprocessor"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+spec:
+  ports:
+  - port: 5000
+    targetPort: 5000
+    nodePort: 30004
+  selector:
+    app: web-server
+  type: NodePort
