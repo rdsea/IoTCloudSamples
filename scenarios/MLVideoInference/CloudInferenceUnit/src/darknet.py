@@ -2,6 +2,7 @@
 # for pre-built object detection through tiny-yolov3
 # Warning: Will work only for the edge-inference-server containers
 # - Rohit
+# Original source code at: https://github.com/pjreddie/darknet/blob/master/python/darknet.py
 from ctypes import *
 import math
 import random
