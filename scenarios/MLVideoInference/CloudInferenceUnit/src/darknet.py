@@ -154,11 +154,5 @@ def get_yolo_detection(image_path):
     net = load_net("/inference/darknet/cfg/yolov3.cfg", "/inference/darknet/yolov3.weights", 0)
     meta = load_meta("/inference/darknet/cfg/coco.data")
     return detect(net, meta, image_path)
-
-    #net = load_net("cfg/densenet201.cfg", "/home/pjreddie/trained/densenet201.weights", 0)
-    #im = load_image("data/wolf.jpg", 0, 0)
-    #meta = load_meta("cfg/imagenet1k.data")
-    #r = classify(net, meta, im)
-    #print r[:10]
     
 
