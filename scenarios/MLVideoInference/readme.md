@@ -36,6 +36,12 @@ The following figure presents a generic view of the ML video inference offloadin
 This is one of strategies to deploy it. The recommended way to pod-node assignment for this scenario in k8s is _scheduling eviction strategy_ [2].
 
 
+#### External libraries
+The following external libraries are used in this scenario:
+* (Darknet)[https://github.com/pjreddie] library for video frame inference 
+* Tiny yolo pretrained weights from: https://pjreddie.com/media/files/yolov3-tiny.weights
+* (Gunicorn)[https://gunicorn.org/] HTTP server and (Eventlet)[https://eventlet.net/] for multiple http async workers 
+
 ---
 
 ## Note
