@@ -3,6 +3,7 @@
 # Warning: Will work only for the edge-inference-server containers
 # - Rohit
 # Original source code at: https://github.com/pjreddie/darknet/blob/master/python/darknet.py
+# Distributed under YOLO license: https://github.com/pjreddie/darknet/blob/master/LICENSE
 from ctypes import *
 import math
 import random
