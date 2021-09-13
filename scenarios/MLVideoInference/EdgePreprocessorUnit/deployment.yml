@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-preprocessor
+  labels:
+    app: edge-preprocessor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edge-preprocessor
+  template:
+    metadata:
+      labels:
+        app: edge-preprocessor
+    spec:
+      nodeSelector:
+        workerType: "edgeWorker.rdsea.csc"
+      containers:
+        - name: edge-preprocessor
+          image: rdsea/edge-ml-inference-preprocessor:rasp-pi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: EDGE_INFERENCE_PREPROCESSOR_SERVICE_PORT
+              value: "4002"
+            - name: EDGE_INFERENCE_SERVICE_NAME
+              value: "edge-inference-service"
+            - name: CLOUD_INFERENCE_PREPROCESSOR_SERVICE_PORT
+              value: "4001"
+            - name: CLOUD_INFERENCE_SERVICE_NAME
+              value: "cloud-inference-service"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-preprocessor
+spec:
+  ports:
+  - port: 8000
+    targetPort: 5000
+  selector:
+    app: edge-preprocessor
