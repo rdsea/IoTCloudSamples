@@ -21,7 +21,7 @@ The ML unit relies on ML models trained with the data mentioned above.
 This model is
 * applied to a single station for a single parameter (e.g., Load of Power Grid)
 
-Further trained information can be found in [this paper](https://research.aalto.fi/files/56621517/main.pdf).
+Further trained information can be found in [the QoA4ML paper](https://research.aalto.fi/files/65786264/main.pdf).
 
 ## Simple test case
 A simple test case includes:
