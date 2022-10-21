@@ -1,23 +1,24 @@
+// simple illustration of generating emission data
 var util=require('util')
 var mocker = require('mocker-data-generator').default
 var emissionCabins = {
     emissionCabinId: {
-      faker: 'random.number({"min": 1, "max": 100})'
+      faker: 'datatype.number({"min": 1, "max": 100})'
     },
     name: {
         randexp: /Cabina VR-(001|002|003|004)/
     },
     portId: {
-        faker: 'random.number({"min": 1, "max": 20})'
+        faker: 'datatype.number({"min": 1, "max": 20})'
     },
     description: {
         randexp: /Ubicada en Caseta Ecoport/
     },
     latitude: {
-      faker: 'random.number({"min":26, "max":27})'
+      faker: 'datatype.number({"min":26, "max":27})'
     },
     longitude: {
-      faker: 'random.number({"min": 18, "max": 19})'
+      faker: 'datatype.number({"min": 18, "max": 19})'
     },
 };
 

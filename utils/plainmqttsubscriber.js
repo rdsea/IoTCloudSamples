@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+//mqtt topic 
 var topic = process.argv[2];
+//connection string of mqtt
+//mqtt://username:password@hostname:port 
 var url = process.argv[3];
 var mqtt = require('mqtt');
 //load mqtt configuration
