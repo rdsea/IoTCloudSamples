@@ -15,9 +15,13 @@ We support only a single output CoAP server/multicast group.
 ## APIs.
 
 ### Running
+
+To run the service 
+
 ```
 $npm start
 ```
+
 ### Check the availability
 
 curl -X GET http://localhost:8080/
@@ -42,3 +46,16 @@ Using  mqtt/in/disconnect to disconnect input MQTT
 AMQP data source: similar to MQTT but using /amqp/in/subscribe.
 
 Using  amqp/in/disconnect to disconnect input  AMQP
+
+## Simple tests
+
+Using a dummy coap server to test a coapp server:
+
+```
+$node test/dummy-coap-server.js
+```
+Then use some utilities to send MQTT data, such as 
+
+```
+$python IoTCloudSamples/utils/plainmqttpublisher.py
+```
