@@ -1,9 +1,19 @@
 # Generic Alarm Data Generator
+
 This is a simple program that can be used to generate alarm data in a generic way. The idea is that there are many types of alarms can occur in open space environment, such as building, seaport, and streets. Normally such alarms are provided by some systems but as we do not have all possible real alarm data, we can generate alarm data as input for testing how services are triggered based on such alarms.
 
 Our goal is to use the alarm generator to create alarms for emulations. Based on alarms, some systems must intelligently react by creating different resources as services for dealing the alarms. It is not our goal to use the alarms to analyze responses (although creating resources would aim at providing data and services for alarm responses)
 
+## Running a simple test
+
+You can run a test like 
+
+```
+node index.js -o test.csv -n 10
+```
+
 ## Common structure
+
 The common structure of an alarm entry should be, in CSV:
 ```
 time, typeofalarm,alarmseverity,location,typeofobject, objectid,
@@ -12,6 +22,7 @@ Such CSV entries can be stored into files or sent to MQTT (or any other queues)
 
 
 ### type of alarms
+
 *  firebreak: fire alarm
 *  powerbreak: electricity power breakdown
 *  cheminalspill: chemical spill
@@ -23,6 +34,7 @@ etc. the list can be extended. In fact, it is dependent on the application using
 
 
 ### level of alarms/severity
+
 * NOTICE
 * WARNING
 * CRITICAL
@@ -30,9 +42,11 @@ etc. the list can be extended. In fact, it is dependent on the application using
 This can be extended furthermore.
 
 ### location
+
 Can be long and lat of GPS or geohash. It would be better to use real GPS/geohash by selecting suitable locations (e.g. using Google Map)
 
 ### type of objects
+
 It is up to the developer to define them. Examples are:
 
 *  container
@@ -47,14 +61,16 @@ It is up to the developer to define them. Examples are:
 *  electricitygrid
 *  waterpipeline
 
-### objectid
+### Objectid
 
 uuid or known identifiers that one can use to link to other logics
 
-### other fields if required.
+### Other fields if required.
+
 We can add other fields if needed.
 
 ## Initial input for the Generator
+
 for any study you might have some initial information that can be used for generating data. Such info can be used to guide the generator.
 
 ### Example Valencia Port
@@ -62,6 +78,7 @@ for any study you might have some initial information that can be used for gener
 We use it for examples with a seaport. Information are obtained from http://www.valenciaportpcs.com/en/ , http://www.worldportsource.com/ports/maps/ESP_Port_of_Valencia_1281.php and https://www.valenciaport.com/autoridad-portuaria/infraestructuras/terminales-e-instalaciones/puerto-de-valencia/
 
 Initial information for object:
+
 ```
 "portterminalinfo": [
     {
@@ -70,6 +87,7 @@ Initial information for object:
     }
 ]
 ```
+
 * *name*: "M.S.C. TERMINAL VALENCIA,S.A.U", "EUROLINEAS MARITIMAS S.A.","CIA. TRASMEDITERRANEA, S.A.","NOATUM CONTAINER TMNL.VCIA S.A", "VALENCIA TERMINAL EUROPA, S.A.", "TCV STEVEDORING COMPANY, S.A.","TERMINALES PORTUARIAS, S.L."
 *location: location can be long,lat.  we have to look at the map (e.g. Google Map) and see suitable data. We can also use less accuracy location.
 

@@ -9,7 +9,7 @@
   "author": "linhsolar@gmail.com|lingfangao@gmail.com",
   "license": "APACHE-2.0",
   "dependencies": {
-    "argparse": "^1.0.10",
-    "faker": "^4.1.0"
+    "argparse": "^2.0.1",
+    "faker": "^5.5.3"
   }
 }
