@@ -28,7 +28,9 @@ For testing purpose, we use sample data from Valencia seaport in Inter-IoT. The 
 
 The service needs MongoDB as a back-end database:
 
+```
 $export MONGODB_URL=mongodb://localhost:27017/truckmonitoring
+```
 
 ### Configuration of truck information queue
 

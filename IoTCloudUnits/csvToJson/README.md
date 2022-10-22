@@ -11,9 +11,11 @@ CSV data sent to MQTT/AMQP broker (in) will be transformed to JSON sent to MQTT/
 ## APIs.
 
 ### Running
+
 ```
 $npm start
 ```
+
 ### Check the availability of the unit
 ```
 curl -X GET http://localhost:8090/
