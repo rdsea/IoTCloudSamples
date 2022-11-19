@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ml-processing
+  name: ml-processing-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ml-processing
+  template:
+    metadata:
+      labels:
+        app: ml-processing
+    spec:
+      containers:
+      - image: minhtribk12/ml_ubuntu:2.0
+        imagePullPolicy: Always
+        name: ml-processing
+        ports:
+        - containerPort: 5555
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ml-processing-service
+spec:
+  ports:
+  - name: defaultport
+    port: 5555
+    protocol: TCP
+    targetPort: 5555
+  selector:
+    app: ml-processing

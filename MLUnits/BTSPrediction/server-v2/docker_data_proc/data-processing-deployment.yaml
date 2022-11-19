@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: data-processing
+  name: data-processing-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-processing
+  template:
+    metadata:
+      labels:
+        app: data-processing
+    spec:
+      containers:
+      - image: minhtribk12/data_ubuntu:2.0
+        imagePullPolicy: Always
+        name: data-processing
+        ports:
+        - containerPort: 5555
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: data-processing-service
+spec:
+  ports:
+  - name: defaultport
+    port: 5555
+    protocol: TCP
+    targetPort: 5555
+  selector:
+    app: data-processing
