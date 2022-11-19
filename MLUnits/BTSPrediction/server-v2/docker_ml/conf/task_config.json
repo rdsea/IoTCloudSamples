@@ -1,0 +1,42 @@
+{
+    "queue_size": 10000,
+    "heartbeat": 5,
+    "task_configuration": {
+        "function": {
+            "package": "processing_task",
+            "module_name": "LSTM_Prediction",
+            "function_name": "process",
+            "path": "./userapp/processing_task.py"
+        },
+        "config": {
+            "model":{
+                "name": "LSTM",
+                "path": "./exported_models/LSTM_single_series"
+            }
+        }
+    },
+    "upstream": [
+        {
+            "name": "default",
+            "protocol": "ZMQ",
+            "configuration": {
+                "url": "tcp://0.0.0.0:5555"
+            }
+        }
+    ],
+    "downstream": [
+        {
+            "id": 1,
+            "defalt": "True",
+            "protocol": "AMQP",
+            "configuration": {
+                "url": "localhost",
+                "client_id": "aaltosea1",
+                "exchange_name": "lstm_bts",
+                "exchange_type": "topic",
+                "log": "False",
+                "type": "receiver"
+            }
+        }
+    ]
+}

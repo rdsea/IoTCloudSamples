@@ -1,0 +1,5 @@
+pika==1.2.0
+pyzmq==22.3.0
+Flask==2.0.2 
+requests==2.26.0
+pandas==1.1.5

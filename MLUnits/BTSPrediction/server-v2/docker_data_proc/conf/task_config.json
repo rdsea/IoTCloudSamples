@@ -1,0 +1,42 @@
+{
+    "queue_size": 10000,
+    "heartbeat": 5,
+    "task_configuration": {
+        "function": {
+            "package": "processing_task",
+            "module_name": "Data_Processing",
+            "function_name": "process",
+            "path": "./userapp/processing_task.py"
+        },
+        "config":{}
+        ,
+        "batch": 5
+    },
+    "upstream": [
+        {
+            "id": 1,
+            "defalt": "True",
+            "protocol": "AMQP",
+            "configuration": {
+                "url": "localhost",
+                "client_id": "aaltosea1",
+                "exchange_name": "lstm_bts",
+                "exchange_type": "topic",
+                "in_queue": "in_request_lstm",
+                "in_routing_key": "lstm.request.#",
+                "roles": "server",
+                "log": "False",
+                "type": "receiver"
+            }
+        }
+    ],
+    "downstream": [
+        {
+            "name": "default",
+            "protocol": "ZMQ",
+            "configuration": {
+                "url": "tcp://ml-processing-service:5555"
+            }
+        }
+    ]
+}

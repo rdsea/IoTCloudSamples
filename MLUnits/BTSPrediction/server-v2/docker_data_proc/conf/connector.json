@@ -1,0 +1,11 @@
+{
+    "amqp_connector":{
+        "class": "amqp",
+        "conf":{
+            "end_point": "localhost",
+            "exchange_name": "task_report",
+            "exchange_type": "topic",
+            "out_routing_key": "task.report.bts.preprocessing"
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "qoa_service": {
+        "service_name": "bts",
+        "url": "http://localhost:8181/v1/data/qoa4ml/bts/alarm/violation",
+        "queue_info":{
+            "client_id":"qoa_user2",
+            "exchange_name": "qoa_topic",
+            "exchange_type": "topic",
+            "in_queue": "in_qoa_user2",
+            "out_queue": "out_qoa_user2",
+            "in_routing_key": "qoa.response.user2",
+            "out_routing_key": "qoa.report.user2",
+            "roles": "client"
+        },
+        "client_info": {
+            "id": "user2",
+            "roles": "ml_user"
+        },
+        "service_info": {
+            "service": "request",
+            "machinetypes": "small",
+            "metric": {
+                "Accuracy": {
+                    "Type": "Gauge",
+                    "Description": "Accuracy",
+                    "Default": 100
+                },
+                "ResponseTime": {
+                    "Type": "Gauge",
+                    "Description": "Service ResponseTime",
+                    "Default": 100
+                }
+            }
+        }
+    },
+    "broker_service":{
+        "broker": "AMQP",
+        "url": "localhost",
+        "url1": "edge-k3s-j6.cs.aalto.fi"
+    },
+    "ml_service":{
+        "client_id":"user2",
+        "exchange_name": "lstm_bts",
+        "exchange_type": "topic",
+        "in_queue": "in_lstm_user2",
+        "out_queue": "out_lstm_user2",
+        "in_routing_key": "lstm.response.user2",
+        "out_routing_key": "lstm.request.user2",
+        "roles": "client"
+    },
+    "data_normalize":{
+        "max": 12.95969626,
+        "mean": 12.04030374
+    }
+}
