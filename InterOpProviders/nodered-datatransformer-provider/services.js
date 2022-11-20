@@ -11,8 +11,6 @@ var kubeOptions=config_package.get("kubeoptions");
 const isIp = require('is-ip');
 const isUrl = require('is-url');
 // from './configTemplates/kubeOptions';
-import randomstring from 'randomstring';
-import { randomBytes } from 'crypto';
 import DataTransformer from './data/models/datatransformer.js';
 
 const exec = promisify(child_process.exec);

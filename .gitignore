@@ -1,5 +1,6 @@
 tmp
 non-git
+.env
 
 .DS_Store
 
