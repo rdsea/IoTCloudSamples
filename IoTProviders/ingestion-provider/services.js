@@ -2,10 +2,8 @@
 import child_process from 'child_process';
 import fs from 'fs';
 import { promisify } from 'util';
-import deployTemplate from './configTemplates/deployTemplate';
-import randomstring from 'randomstring';
-import { randomBytes } from 'crypto';
-import * as db from './data/db';
+import deployTemplate from './configTemplates/deployTemplate.js';
+import * as db from './data/db.js';
 
 const exec = promisify(child_process.exec);
 const writeFile = promisify(fs.writeFile);

@@ -3,20 +3,18 @@
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -r esm index.js"
+    "start": "nodemon  index.js"
   },
   "author": "lingfangao@gmail.com|linhsolar@gmail.com",
   "license": "APACHE-2.0",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "esm": "^3.2.25",
     "express": "^4.16.2",
-    "mongodb": "^3.5.9",
-    "mongoose": "^5.9.22",
-    "nedb": "^1.8.0",
-    "nodemon": "^2.0.4",
-    "randomstring": "^1.1.5"
+    "mongodb": "^4.12.0",
+    "mongoose": "^6.7.2",
+    "nodemon": "^2.0.4"
   }
 }
