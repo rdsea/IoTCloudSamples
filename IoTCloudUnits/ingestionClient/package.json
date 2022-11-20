@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "an ingestion client for iCOMOT sensors",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,7 +22,7 @@
     "@google-cloud/bigquery": "^6.0.3",
     "axios": "^1.1.3",
     "influx": "^5.0.7",
-    "js-yaml": "^3.13.1",
+    "js-yaml": "^4.1.0",
     "moment": "^2.24.0",
     "mqtt": "^4.3.7",
     "winston": "^3.0.0-rc1"
