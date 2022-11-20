@@ -28,7 +28,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mongodb": "^3.1.1",
-    "mongoose": "^4.13.7",
+    "mongoose": "^6.7.2",
     "nedb": "^1.8.0",
     "nodemon": "^1.13.3",
     "randomstring": "^1.1.5"
