@@ -30,7 +30,7 @@
     "mongodb": "^3.1.1",
     "mongoose": "^4.13.7",
     "nedb": "^1.8.0",
-    "nodemon": "^1.13.3",
+    "nodemon": "^2.0.20",
     "randomstring": "^1.1.5"
   }
 }
