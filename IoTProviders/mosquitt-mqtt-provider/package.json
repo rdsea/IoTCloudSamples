@@ -29,7 +29,7 @@
     "chai-url": "^1.0.4",
     "express": "^4.16.2",
     "mongodb": "^3.0.0-rc0",
-    "mongoose": "^5.7.1",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.19.2",
     "randomstring": "^1.1.5"
   }
