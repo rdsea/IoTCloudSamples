@@ -1,13 +1,10 @@
-import Testrig from './data/models/testrig';
+import Testrig from './data/models/testrig.js';
 
 import child_process from 'child_process';
 import fs from 'fs';
 import { promisify } from 'util';
-import deployTemplate from './configTemplates/deployTemplate';
-import serviceTemplate from './configTemplates/serviceTemplate';
-import randomstring from 'randomstring';
-import { randomBytes } from 'crypto';
-import testrig from './data/models/testrig';
+import deployTemplate from './configTemplates/deployTemplate.js';
+import serviceTemplate from './configTemplates/serviceTemplate.js';
 
 const exec = promisify(child_process.exec);
 const writeFile = promisify(fs.writeFile);
