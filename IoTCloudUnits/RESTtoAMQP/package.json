@@ -10,11 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "amqplib": "^0.5.2",
+    "amqplib": "^0.10.3",
     "chai": "^4.1.2",
     "chai-fs": "^2.0.0",
     "chai-url": "^1.0.4",
     "express": "^4.16.3",
-    "js-yaml": "^3.14.1"
+    "js-yaml": "^4.1.0"
   }
 }

@@ -5,7 +5,7 @@ chai.use(require('chai-fs'))
 chai.expect('config.yml').to.be.a.path("the configuration file must exist");
 let doc = {};
 try {
-    doc = yml.safeLoad(fs.readFileSync('config.yml', 'utf8'));
+    doc = yml.load(fs.readFileSync('config.yml', 'utf8'));
     console.log(doc);
 } catch (e) {
     console.log("failed to load config")
