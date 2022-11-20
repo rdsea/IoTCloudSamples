@@ -2,13 +2,17 @@
 
 ## Build
 * `$ npm i` to install dependencies
+* $export INGESTION_CLIENT_CONFIG='/path/to/config.yml' 
 * `npm start` to start the ingestion client
 
 ## Configuration
+
 We assume that we consume valid JSON data from the mqtt broker
 
 
-A sample configuration is provided in the `config.sample.yml`. Data storage should be handled by a remote serivice through rest that exposes
+To run the ingestion client, we need a configuration file. A sample configuration is provided in the `config.sample.yml`. The configuration file is specified via the environment variable $INGESTION_CLIENT_CONFIG
+
+Data storage should be handled by a remote service through rest that exposes
 the endpoint `POST /insert` with the following object 
 
 ```
@@ -19,6 +23,7 @@ the endpoint `POST /insert` with the following object
     }
 }
 ```
+>A plain rest log is given in [utils](../../utils/plain_rest.py)
 
 ## Dependencies
 ### MQTT Broker

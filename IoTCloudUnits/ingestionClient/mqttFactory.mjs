@@ -1,6 +1,5 @@
 import mqtt from 'mqtt'
-import fs from 'fs'
-import logger from './logger'
+import logger from './logger.mjs'
 import axios from 'axios';
 
 function createMqttClient(config, insert){
@@ -32,7 +31,7 @@ function createMqttClient(config, insert){
         if(config.remoteDataLocation){
             console.log(`sending data to ${config.remoteDataLocation}`)
             axios.post(config.remoteDataLocation, data).catch((err) => {
-                logger.error(`failed to send data to ${outputUrl}`)
+                logger.error(`failed to send data to ${config.remoteDataLocation}`)
                 logger.error(err);
             })
         }
