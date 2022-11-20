@@ -16,7 +16,7 @@
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.22",
     "nedb": "^1.8.0",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.20",
     "randomstring": "^1.1.5"
   }
 }
