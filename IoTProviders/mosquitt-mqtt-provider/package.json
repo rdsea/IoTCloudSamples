@@ -30,7 +30,7 @@
     "express": "^4.16.2",
     "mongodb": "^3.0.0-rc0",
     "mongoose": "^5.7.1",
-    "nodemon": "^1.19.2",
+    "nodemon": "^2.0.20",
     "randomstring": "^1.1.5"
   }
 }
