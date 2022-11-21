@@ -1,12 +1,15 @@
 
 const MongoClient = require("mongodb").MongoClient;
-let MONGODB_URL = 'mongodb+srv://iotcloudexamples:ac.at.tuwien.dsg@cluster0-pz2vu.gcp.mongodb.net/test?retryWrites=true'
+let MONGODB_URL = process.env.MONGODB_URL
 const DB_NAME = "sinc";
 const COLLECTION = "docker";
 
 // an environment variable can also be passed
 if(process.env.MONGODB_URL){
     MONGODB_URL = process.env.MONGODB_URL
+}
+if (MONGODB_URL ==null) {
+   console.log("MONGODB_URL is not set or not in the right format! The service might not be executed properly!")
 }
 
 let client = null;
