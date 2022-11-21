@@ -24,7 +24,7 @@
     "csvtojson": "^2.0.8",
     "express": "^4.16.3",
     "fs-extra": "^7.0.0",
-    "mongodb": "^3.1.1",
+    "mongodb": "^3.7.3",
     "nedb": "^1.8.0"
   }
 }
