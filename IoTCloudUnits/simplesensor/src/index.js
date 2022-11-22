@@ -1,13 +1,12 @@
 import fs from 'fs'
-import csv from 'fast-csv';
-import logger from './logger'
-import transforms from './dataTransform';
-import outputs from './output';
-const assert = require('assert').strict;
+import * as csv from 'fast-csv';
+import logger from './logger.js'
+import transforms from './dataTransform/index.js';
+import outputs from './output/index.js';
+import assert from 'assert';
 //import config from '../config.json';
-import path from 'path';
-var ArgumentParser = require('argparse').ArgumentParser;
-var parser = new ArgumentParser({
+import argparse from 'argparse';
+var parser = new argparse.ArgumentParser({
   version: '0.1.0',
   addHelp:true,
   description: 'arguments for simplesensor'
@@ -68,7 +67,8 @@ function start(){
     // here we emulate the sensor by reading data from a file.
     //for real sensor this can be change.
     let stream = fs.createReadStream(`${config.file}`);
-    let csvStream = csv({headers : true}).on('data', (data) => {
+    const csvStream = csv.format({headers : true})
+    csvStream.on('data', (data) => {
     //if needed to transform the sensor format.
         let payload = transform(data);
         csvStream.pause();

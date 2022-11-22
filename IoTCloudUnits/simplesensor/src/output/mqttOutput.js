@@ -1,5 +1,5 @@
 import mqtt from 'mqtt';
-import logger from '../logger';
+import logger from '../logger.js';
 
 let client = null;
 let mqttOptions = null;
