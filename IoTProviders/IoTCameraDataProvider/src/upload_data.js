@@ -9,7 +9,7 @@ const googleMapsClient = require('@google/maps').createClient({
   key: process.env.GOOGLE_MAP_KEY
 });
 const winston = require('winston');
-import Camera from '../src/data/camera';
+import Camera from '../src/data/camera.js';
 winston.loggers.add('production', {
   console: {
     level: 'info',

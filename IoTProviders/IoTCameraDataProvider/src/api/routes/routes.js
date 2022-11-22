@@ -1,4 +1,5 @@
 'use strict';
+import  cameraController from '../controllers/camera-controller.js';
 
 /**
 * Created by Tran The Vu on 15/11/2017.
@@ -6,7 +7,7 @@
 */
 
 export default function(app) {
-	var cameraController = require('../controllers/camera-controller');
+	
 
 	app.route('/camera/list')
 		.get(cameraController.listAllCameras);
