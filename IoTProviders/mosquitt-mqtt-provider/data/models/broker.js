@@ -1,4 +1,4 @@
-import mongoose from '../db';
+import mongoose from '../db.js';
 
 var Broker = mongoose.model('Broker', {
     location: String,

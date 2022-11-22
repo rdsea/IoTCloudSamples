@@ -1,4 +1,4 @@
-import mongoose from '../db';
+import mongoose from '../db.js';
 
 var GLIoTFunction = mongoose.model('GLIoTFunction', {
     location: String,

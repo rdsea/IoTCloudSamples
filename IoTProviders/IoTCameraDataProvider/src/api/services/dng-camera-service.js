@@ -6,7 +6,7 @@
 import cheerio from 'cheerio';
 import axios from 'axios';
 import moment from 'moment';
-import Camera from '../../data/camera';
+import Camera from '../../data/camera.js';
 
 /**
  * loadVideoFrameFromUrl - load video frame from url of a camera from Danang public camera

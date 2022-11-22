@@ -1,5 +1,5 @@
 import axios from 'axios';
-import logger from '../logger';
+import logger from '../logger.js';
 
 export default function output(payload, uri){
 

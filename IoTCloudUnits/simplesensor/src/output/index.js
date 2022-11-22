@@ -1,6 +1,6 @@
-import httpOutput from './httpOutput';
-import mqttOutput from './mqttOutput';
-import consoleOutput from './consoleOuput';
+import httpOutput from './httpOutput.js';
+import mqttOutput from './mqttOutput.js';
+import consoleOutput from './consoleOuput.js';
 
 const outputs = {
     http: httpOutput,

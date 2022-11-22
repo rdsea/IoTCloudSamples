@@ -1,4 +1,4 @@
-import mongoose from './db';
+import mongoose from './db.js';
 //using legacy coordination
 var Schema = mongoose.Schema;
 var CameraSchema =new Schema({

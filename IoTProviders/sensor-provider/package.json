@@ -3,9 +3,10 @@
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -r esm index.js"
+    "start": "nodemon index.js"
   },
   "author": "lingfangao@gmail.com|linhsolar@gmail.com",
   "licenses": [
@@ -20,9 +21,10 @@
     "chai-url": "^1.0.4",
     "esm": "^3.2.25",
     "express": "^4.16.2",
-    "mongodb": "^3.0.0-rc0",
-    "mongoose": "^5.9.22",
+    "mongodb": "^4.12.0",
+    "mongoose": "^6.7.2",
     "nodemon": "^2.0.4",
-    "randomstring": "^1.1.5"
+    "randomstring": "^1.1.5",
+    "valid-url": "^1.0.9"
   }
 }

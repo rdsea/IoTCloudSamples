@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
 
 
-const MongoClient = require("mongodb").MongoClient;
+import  mongodb from 'mongodb';
+let MongoClient =mongodb.MongoClient;
 let MONGODB_URL = 'mongodb://localhost:27017';
 //Todo: make them into configuration file
 const DB_NAME = "iotcloudsamples";

@@ -1,5 +1,5 @@
-import bigQuery from './bigQuery';
-import * as db from './data/db';
+import bigQuery from './bigQuery.js';
+import * as db from './data/db.js';
 
 export function createDataset(datasetId){
     let timestamp = (new Date()).getTime();

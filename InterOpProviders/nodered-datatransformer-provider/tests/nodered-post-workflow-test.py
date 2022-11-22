@@ -2,12 +2,7 @@
 #we create list and remove resources.
 import requests
 import json
-import sys
-import csv
-import time
-import concurrent.futures
 import argparse
-import numpy as np
 parser = argparse.ArgumentParser()
 parser.add_argument('--nodered_provider', help='URL of the Data Transformer Provider')
 parser.add_argument('--workflow_file',help='workflow_file')

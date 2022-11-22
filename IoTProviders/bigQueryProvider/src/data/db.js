@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
 
 
-const MongoClient = require("mongodb").MongoClient;
+import mongodb from 'mongodb'
+let MongoClient =mongodb.MongoClient;
 let MONGODB_URL = process.env.MONGODB_URL;
 
 const DB_NAME = "sinc";
@@ -11,7 +11,9 @@ const COLLECTION = "bigquery";
 if(process.env.MONGODB_URL){
     MONGODB_URL = process.env.MONGODB_URL
 }
-
+if (MONGODB_URL ==null){
+    console.log("MONGODB_URL is not set")
+}
 let client = null;
 let db = null;
 

@@ -3,12 +3,10 @@ import child_process from 'child_process';
 import fs from 'fs';
 import os from 'os';
 import { promisify } from 'util';
-import deployTemplate from './configTemplates/deployTemplate';
-import randomstring from 'randomstring';
-import { randomBytes } from 'crypto';
-import GLIoTFunction from './data/models/gliotfunction';
-var cmd=require('node-cmd');
-var treekill = require('tree-kill');
+import deployTemplate from './configTemplates/deployTemplate.js';
+import GLIoTFunction from './data/models/gliotfunction.js';
+import cmd from 'node-cmd';
+import treekill from 'tree-kill';
 //const exec = child_process.exec;
 //const execSync = child_process.execSync;
 //const execFile = child_process.execFile;
@@ -16,7 +14,7 @@ var treekill = require('tree-kill');
 //const spawnSync = child_process.spawnSync;
 
 const writeFile = promisify(fs.writeFile);
-const HashMap = require('hashmap');
+import HashMap from 'hashmap';
 var gliotmap = new HashMap();
 
 export function createGLIoTFunction(config){

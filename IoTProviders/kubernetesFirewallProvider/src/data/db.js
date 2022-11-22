@@ -1,9 +1,5 @@
-var chai = require('chai')
-  , expect = chai.expect
-  , should = chai.should();
-chai.use(require('chai-url'));
 const MongoClient = require("mongodb").MongoClient;
-let MONGODB_URL = '';
+let MONGODB_URL = 'mongodb://localhost:27017';
 const DB_NAME = "sinc";
 const COLLECTION = "firewall";
 
@@ -11,7 +7,9 @@ const COLLECTION = "firewall";
 if(process.env.MONGODB_URL){
     MONGODB_URL = process.env.MONGODB_URL
 }
-expect(MONGODB_URL).to.have.protocol("mongodb+srv");
+if (MONGODB_URL==null){
+    console.log("MONGODB_URL is not set or not in the right format! The service might not be executed properly!")
+}
 let client = null;
 let db = null;
 

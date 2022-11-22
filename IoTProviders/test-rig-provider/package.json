@@ -3,23 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js --exec babel-node"
+    "start": "nodemon index.js"
   },
   "author": "lingfangao@gmail.com",
   "license": "ISC",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-2": "^6.24.1"
-  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "mongodb": "^3.0.0-rc0",
-    "mongoose": "^4.13.7",
-    "nodemon": "^1.13.3",
+    "mongodb": "^4.12.0",
+    "mongoose": "^6.7.2",
+    "nodemon": "^2.0.20",
     "randomstring": "^1.1.5"
   }
 }
