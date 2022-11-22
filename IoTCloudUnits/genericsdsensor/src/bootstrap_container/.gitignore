@@ -1,7 +1,0 @@
-
-/target/*
-*.classpath
-*.project
-.settings/*
-build.bat
-buildWithSensor.bat
