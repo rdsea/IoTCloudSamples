@@ -1,4 +1,4 @@
-const winston = require('winston');
+import winston from 'winston';
 
 const LOG_FILE = '/tmp/ingestion.log'
 
@@ -11,5 +11,5 @@ const logger = winston.createLogger({
 
 logger.info(`ingestion client logging all data to ${LOG_FILE}`);
 
-module.exports = logger;
+export default logger;
 

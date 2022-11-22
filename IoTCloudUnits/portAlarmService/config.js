@@ -1,11 +1,11 @@
-const yml = require("js-yaml");
-const fs = require("fs");
-const logger = require("./src/logger");
+import yml from 'js-yaml';
+import fs  from 'fs';
+import logger from './src/logger.js';
 
 
 let config = null;
 try {
-    config = yml.safeLoad(fs.readFileSync("config.yml", 'utf8'));
+    config = yml.load(fs.readFileSync("config.yml", 'utf8'));
     logger.info("configuration accepted")
     logger.info(config);
 } catch (e) {
@@ -13,6 +13,6 @@ try {
     logger.error(e);
 }
 
-module.exports = config;
+export default config;
 
   
