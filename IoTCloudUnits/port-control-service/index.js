@@ -1,6 +1,6 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const services = require("./src/services");
+import express from 'express';
+import bodyParser from 'body-parser';
+import services from './src/services.js';
 
 const PORT = 9999;
 var app = express();

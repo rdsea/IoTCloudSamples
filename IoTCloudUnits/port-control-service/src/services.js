@@ -1,53 +1,47 @@
-const db = require("./data/db");
+import db from './data/db.js';
+class PortControlService {
+    constructor(){
 
-function registerVessel(vessel){
+    }
+registerVessel(vessel){
     return db.insert(vessel)
 }
 
-function findAllVessels(){
+ findAllVessels(){
     return db.find({});
 }
 
-function findVesselsInTerminal(terminal){
+ findVesselsInTerminal(terminal){
     let query = {
         "Terminal":terminal
     }
     return db.find(query)
 }
-function registerTruck(truck){
+ registerTruck(truck){
     return db.insert(truck)
 }
-function findAllTrucks(){
+ findAllTrucks(){
     return db.find({});
 }
-function findTrucksInPort(licensePlate){
+ findTrucksInPort(licensePlate){
   let query = {
       licensePlate
   }
   return db.find(query)
 }
 
-function registerCrane(crane){
+ registerCrane(crane){
     return db.insert(crane)
 }
-function findAllCranes(){
+ findAllCranes(){
     return db.find({});
 }
-function findTrucksInPort(craneId){
+ findCraneInPort(craneId){
   let query = {
       craneId
   }
   return db.find(query)
 }
 //TODO find cranes with geohash
-
-module.exports = {
-    registerVessel,
-    findVesselsInTerminal,
-    findAllVessels,
-    registerTruck,
-    findAllTrucks,
-    findTrucksInPort,
-    registerCrane,
-    findAllCranes
 }
+export default PortControlService;
