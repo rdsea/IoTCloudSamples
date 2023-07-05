@@ -2,12 +2,10 @@
 import child_process from 'child_process';
 import fs from 'fs';
 import { promisify } from 'util';
-import deployTemplate from './configTemplates/deployTemplate';
-import serviceTemplate from './configTemplates/serviceTemplate';
-import randomstring from 'randomstring';
-import { randomBytes } from 'crypto';
-import Broker from './data/models/broker';
-const url = require('url');
+import deployTemplate from './configTemplates/deployTemplate.js';
+import serviceTemplate from './configTemplates/serviceTemplate.js';
+import Broker from './data/models/broker.js';
+import url from 'url';
 const exec = promisify(child_process.exec);
 const writeFile = promisify(fs.writeFile);
 const kube_configuration_file = "conf/kubeoptions.json";

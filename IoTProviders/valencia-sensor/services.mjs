@@ -1,13 +1,13 @@
-import Sensor from './data/models/sensor';
+import Sensor from './data/models/sensor.js';
 
 import child_process from 'child_process';
 import fs from 'fs';
 import { promisify } from 'util';
-import deployTemplate from './configTemplates/sensorDeployTemplate';
+import deployTemplate from './configTemplates/sensorDeployTemplate.js';
 import randomstring from 'randomstring';
 import { randomBytes } from 'crypto';
-import * as sensorTypes from './data/models/sensorTypes';
-import * as configTemplates from './configTemplates/sensorConfigTemplate';
+import * as sensorTypes from './data/models/sensorTypes.js';
+import * as configTemplates from './configTemplates/sensorConfigTemplate.js';
 
 const exec = promisify(child_process.exec);
 const writeFile = promisify(fs.writeFile);

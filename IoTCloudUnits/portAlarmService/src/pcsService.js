@@ -1,11 +1,11 @@
-const axios = require('axios');
-const mqtt = require('mqtt');
-const logger = require('./logger');
-const config = require("../config");
+import axios from 'axios';
+import mqtt from 'mqtt';
+import logger from './logger.js';
+import config from '../config.js';
 
 let client = mqtt.connect(config.vesselBroker);
 
-actions = {
+let actions = {
     NOTIFY_PRESENCE_TERMINAL_AUTHORITY: "NOTIFY_PRESENCE_TERMINAL_AUTHORITY",
     NOTIFY_PRESENCE_HARBOUR_AUTHORITY: "NOTIFY_PRESENCE_HARBOUR_AUTHORITY",
     COMMENCE_EVACUATION: "COMMENCE_EVACUATION",
@@ -112,4 +112,4 @@ function _handleTraffic(alarm, vessel){
             break;
     }
 }
-module.exports = alarmAction;
+export default alarmAction;

@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import * as services from './services';
-import * as sensorTypes from './data/models/sensorTypes';
+import * as services from './services.mjs';
+import * as sensorTypes from './data/models/sensorTypes.js';
 
 const PORT = 3004;
 var app = express();

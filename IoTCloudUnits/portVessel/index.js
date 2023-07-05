@@ -1,6 +1,6 @@
-const mqtt = require('mqtt');
-const logger = require('./src/logger')
-const config = require('./config');
+import  mqtt from 'mqtt';
+import logger from './src/logger.js'
+import config from './config.js';
 
 
 let client = mqtt.connect(config.broker);

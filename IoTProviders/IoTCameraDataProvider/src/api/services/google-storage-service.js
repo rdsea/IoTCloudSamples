@@ -3,10 +3,17 @@
 import Storage from '@google-cloud/storage';
 import path from 'path';
 import moment from 'moment';
-import * as userService from './user-service';
+import * as userService from './user-service.js';
+import { exit } from 'process';
 
-const storage = Storage({
-    keyFilename: path.join(__dirname, '../../../keyfile.json'),
+let key_file =process.env.GOOGLE_APPLICATION_CREDENTIALS;
+if (key_file == null) {
+    console.log("GOOGLE_APPLICATION_CREDENTIALS is not set to the credential file");
+    console.log("The service will be terminated")
+    exit(0)
+}
+const storage = new Storage.Storage({
+    keyFilename: key_file
 });
 
 // videoName should include the filetype extension !

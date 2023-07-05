@@ -1,4 +1,4 @@
-import mongoose from '../db';
+import mongoose from '../db.js';
 
 var Testrig = mongoose.model('Testrig', {
     location: String,

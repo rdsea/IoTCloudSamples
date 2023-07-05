@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import * as services from './services';
+import * as services from './services.js';
 
 const PORT = 3000;
 var app = express();

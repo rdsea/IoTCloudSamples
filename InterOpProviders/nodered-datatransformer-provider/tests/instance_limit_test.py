@@ -1,9 +1,6 @@
 import requests
 import json
-import sys
-import time
 import argparse
-import numpy as np
 parser = argparse.ArgumentParser()
 parser.add_argument('--datatransformer_provider', help='URL of the Data Transformer Provider')
 #parser.add_argument('--resource_type', help='Type of resource')

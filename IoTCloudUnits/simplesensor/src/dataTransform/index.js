@@ -1,5 +1,5 @@
-import csvTransform from './csvTransform';
-import jsonTransform from './jsonTransform';
+import csvTransform from './csvTransform.js';
+import jsonTransform from './jsonTransform.js';
 
 const transforms = {
     csv: csvTransform,

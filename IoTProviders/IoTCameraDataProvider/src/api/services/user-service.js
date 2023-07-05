@@ -1,4 +1,4 @@
-import User from '../../data/user';
+import User from '../../data/user.js';
 import shortid from 'shortid';
 
 export function getBucketName(email){

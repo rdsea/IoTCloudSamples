@@ -1,14 +1,14 @@
-import mqtt from 'mqtt'
 import yaml from 'js-yaml'
 import fs from 'fs'
-import logger from './logger'
+import logger from './logger.mjs'
 
-import mqttFactory from './mqttFactory'
+import mqttFactory from './mqttFactory.mjs'
 
 // load config
+let config_file =process.env.INGESTION_CLIENT_CONFIG; 
 let config = null;
 try{
-    config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'));
+    config = yaml.safeLoad(fs.readFileSync(config_file, 'utf8'));
     logger.info('valid configuration accepted');
 }catch(err){
     logger.error(err);
@@ -19,8 +19,11 @@ try{
 let clients = [];
 
 logger.info(`loading ${config.data} data plugin`)
-let dataPlugin = require(`./dataPlugins/${config.data}/dataPlugin`).default;
-
+let data_plugin_source =`./dataPlugins/${config.data}/dataPlugin.js`
+logger.info(`source: ${data_plugin_source}`)
+//using dynamic loading to load the module 
+let dataPluginModule =await import(data_plugin_source) 
+let dataPlugin =dataPluginModule.default
 dataPlugin.init().then(() => {
     config.brokers.forEach((broker) => {
         broker.remoteDataLocation = config.remoteDataLocation

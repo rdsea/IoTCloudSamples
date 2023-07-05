@@ -7,10 +7,10 @@ chai.use(require('chai-url'));
 
 let connection = null;
 let channel = null;
-chai.expect(config.amqp_uri).to.have.protocol('amqp');
-console.log(`connecting to amqp broker at ${config.amqp_uri}`);
+chai.expect(config.amqp_uri).to.have.protocol('amqps');
+console.log("connecting to amqp broker");
 amqp.connect(config.amqp_uri).then((conn) => {
-    console.log(`successfully connected to ${config.amqp_uri}`);
+    console.log("successfully connected to amqp");
     connection = conn;
     console.log('creating new channel');
     return connection.createChannel();

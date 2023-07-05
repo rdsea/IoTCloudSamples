@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import * as services from './services';
-import configTemplate, { bigQueryTemplate } from './configTemplates/ingestionConfigTemplate';
+import * as services from './services.js';
+import configTemplate, { bigQueryTemplate } from './configTemplates/ingestionConfigTemplate.js';
 
 const PORT = 3003;
 var app = express();
