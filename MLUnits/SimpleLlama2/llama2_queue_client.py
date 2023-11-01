@@ -1,7 +1,9 @@
 """
-This simple service uses basic, small Llama model and provides a simple AMQP interface for calling the service.
-The idea is that the service has to running in a reasonable machine within a network that cannot be access from outside. 
-so we use messaging protocols to enable the communication.
+This simple client calls a remote small Llama service via a simple AMQP interface.
+The idea is that the LLM service (e.g., based on Llama model) has to run in a reasonable 
+machine within a network that cannot be access from outside using REST. Furthermore, it also 
+demonstrates  a simple way to integrate LLMs via messaging so we use messaging protocols to 
+enable the communication.
 """
 import logging
 import sys
@@ -43,11 +45,12 @@ if __name__ == '__main__':
     consumer_thread = threading.Thread(target=start_consumer)
     consumer_thread.start()
     
+    ##making the input via another thread
     connection = pika.BlockingConnection(params) # Connect to AMQP, We test with CloudAMQP
     channel = connection.channel() # start a channel
     result_queue=channel.queue_declare(queue=query_queue_name)
     channel.queue_bind(exchange="amq.direct",queue=query_queue_name)
-    # create a call function for incoming message consisting of prompt and message id
+    # read input and send to LLM
     while True:
         prompt = input("Q:")
         if (prompt=="exit"):
