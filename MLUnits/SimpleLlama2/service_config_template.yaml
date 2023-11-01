@@ -1,0 +1,8 @@
+#yaml for service info, replace model path, etc.
+amqp:
+  url: 
+  query_queue_name: llama2query
+  answer_queue_name: llama2answer
+llama2:
+  model_path: models/llama-2-7b.Q5_K_M.gguf
+  max_tokens: 32
