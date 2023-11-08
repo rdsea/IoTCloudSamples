@@ -2,6 +2,7 @@
 # IoT Cloud Samples for Ensembles of IoT, Network Functions and Cloud
 
 ## Introduction
+
 This collection includes different types of IoT, edge services, network functions and cloud units, as well as samples of IoT Cloud Systems, data, and testing scenarios for different **research and teaching purposes**. Our goal  is to provide open source samples that one can use for different purposes in research and development of [ensembles of IoT, Network functions and clouds](https://link.springer.com/article/10.1007/s11761-018-0228-2).
 
 Note: *Our code is currently being updated and uploaded.*
@@ -13,10 +14,11 @@ Hong-Linh Truong,[Using IoTCloudSamples as a Software Framework for Simulations 
 
 ## IoT Cloud Units
 
-They include units for IoT, Edge and Cloud. The code is under IoTCloudUnits directory. A unit mostly is a microservice, a single function or a component that offer a set of functions for a tenant.
+They include units for IoT, Edge and Cloud. The code is under IoTCloudUnits directory. A unit mostly is a microservice, a single program or a component that offers a set of functions for a tenant.
 
 ### IoT units
-IoT units are components for IoT. Examples are sensors, actuators, and even gateways. They can also be just user-defined scripts that model some IoT behaviors.
+
+IoT units are components for IoT. Examples are sensors, actuators, and even IoT gateways. They can also be just user-defined scripts/programs that model some IoT behaviors.
 
 
 #### Sensors
@@ -54,13 +56,16 @@ They are for network function features. For example, firewall control is network
 
 ## Machine Learning units
 
-[ML units](MLUnits/README.md) implement ML models that can be deployed as a service unit.
+Mostly a ML unit is a model that can be encapsulated into a single ML sevice instance. ML units implement ML models that can be deployed as a service unit.
+- [BTS Prediction](MLUnits/BTSPrediction/): a set of ML units for dynamic prediction of alarms and other problems within a telco base transceiver station.
+- [Llama2](MLUnits/SimpleLlama2/): simple deployment of llama2 small model
 
 ## IoT, Cloud and Network Function providers
 
 Units provide basic functions. We provide Providers which can be used to provision and manage resources, which are instances of units, for different purposes. A provider will provide IoT, network functions and cloud resources.
 
 Examples:
+
 - BTS Sensor Provider
 - MQTT Provider
 - NODE-RED Provider
@@ -69,7 +74,8 @@ Examples:
 There are specific code for specific providers but there are also generic code for generic providers that can be adapted easy for other purposes.
 
 ## Data
-We provide some sample of data collected from real systems. Examples are BTS data. from monitoring real BTS
+
+We provide some sample of data collected from real systems. Examples are Base Transceiver Stations (BTS) data from monitoring real BTS
 
 ## IoT-Edge-Cloud scenarios
 
@@ -99,6 +105,7 @@ IoTCloudSamples utilizes different programming languages and frameworks. General
 ## Relevant publications
 
 The following papers are relevant to the development of the IoTCloudSamples:
+
 - Hong-Linh Truong,[Using IoTCloudSamples as a Software Framework for Simulations of Edge Computing Scenarios](https://research.aalto.fi/files/61274956/Truong_Using.1_s2.0_S2542660521000275_main.pdf), Internet of Things: Engineering Cyber Physical Human Systems, 14, [100383]. https://doi.org/10.1016/j.iot.2021.100383.
 - Hong-Linh Truong, Lingfan Gao, Michael Hammerer, Service Architectures and Dynamic Solutions for Interoperability of IoT, Network Functions and Cloud Resources [Preprint](https://bit.ly/2LEYoIz), 12th European Conference on Software Architecture, September 24-28, 2018, Madrid, Spain
 - Hong-Linh Truong, Luca Berardinelli, Ivan Pavkovic and Georgiana Copil, Modeling and Provisioning IoT Cloud Systems for Testing Uncertainties, [Pre-print PDF](https://users.aalto.fi/~truongh4/publications/2017/truong-mobiquitous2017.pdf), 14th EAI International Conference on Mobile and Ubiquitous Systems: Computing, Networking and Services (MobiQuitous 2017), November 7–10, 2017,Melbourne, Australia.
@@ -110,4 +117,4 @@ Contact Hong-Linh Truong (linh.truong@aalto.fi) for further information
 
 ## Acknowledgment
 
-The work is partially supported by the [H2020 U-test project](http://www.u-test.eu) and the [H2020 Inter-IoT](http://www.inter-iot-project.eu/), with a lot of in-kind effort from students and also is benefited from our collaboration with industries, who share use cases and data.
+The work is dated back from 2015. The work is partially supported by the [H2020 U-test project](http://www.u-test.eu) and the [H2020 Inter-IoT](http://www.inter-iot-project.eu/), with a lot of in-kind effort from students and also is benefited from our collaboration with industries, who share use cases and data.
