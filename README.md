@@ -1,5 +1,5 @@
 
-# IoT Cloud Samples for Ensembles of IoT, Network Functions and Cloud
+# IoT Cloud Samples for Ensembles of IoT, Edge, Network Functions, and Cloud
 
 ## Introduction
 
