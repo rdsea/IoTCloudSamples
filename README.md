@@ -10,7 +10,19 @@ Note: *Our code is currently being updated and uploaded.*
 Pls. cite this paper if you use the IoTCloudSamples:
 
 Hong-Linh Truong,[Using IoTCloudSamples as a Software Framework for Simulations of Edge Computing Scenarios](https://research.aalto.fi/files/61274956/Truong_Using.1_s2.0_S2542660521000275_main.pdf), Internet of Things: Engineering Cyber Physical Human Systems, 14, [100383]. https://doi.org/10.1016/j.iot.2021.100383.
-
+```
+@article{TRUONG2021100383,
+title = {Using IoTCloudSamples as a software framework for simulations of edge computing scenarios},
+journal = {Internet of Things},
+volume = {14},
+pages = {100383},
+year = {2021},
+issn = {2542-6605},
+doi = {https://doi.org/10.1016/j.iot.2021.100383},
+url = {https://www.sciencedirect.com/science/article/pii/S2542660521000275},
+author = {Hong-Linh Truong}
+}
+```
 
 ## IoT Cloud Units
 
@@ -58,7 +70,7 @@ They are for network function features. For example, firewall control is network
 
 Mostly a ML unit is a model that can be encapsulated into a single ML sevice instance. ML units implement ML models that can be deployed as a service unit.
 - [BTS Prediction](MLUnits/BTSPrediction/): a set of ML units for dynamic prediction of alarms and other problems within a telco base transceiver station.
-- [Llama2](MLUnits/SimpleLlama2/): simple deployment of llama2 small model
+- [Llama2](MLUnits/SimpleLlama2/): a simple deployment of a llama2 small model, using AMQP API.
 
 ## IoT, Cloud and Network Function providers
 
@@ -97,9 +109,9 @@ The [network operations analytics scenario](scenarios/netops) is used to study e
 The [machine learning predictive maintenance scenario](scenarios/IoTMLPredictiveMaintenance) is used to study dynamic ML serving and IoT data inference. 
 
 ## Supporting Edge Cloud Technologies
+
 IoTCloudSamples utilizes different programming languages and frameworks. Generally, code can be run with
 * Docker container systems
-  - Several prebuilt containers are available in https://hub.docker.com/u/rdsea
 * Kubernetes (mainly tested with Google Kubernetes and minukube)
 
 ## Relevant publications
@@ -112,9 +124,9 @@ The following papers are relevant to the development of the IoTCloudSamples:
 - Hong-Linh Truong, Georgiana Copil, Schahram Dustdar, Duc-Hung Le, Daniel Moldovan, Stefan Nastic, On Engineering Analytics for Elastic IoT Cloud Platforms [PDF](https://users.aalto.fi/~truongh4/publications/2016/truong-icsoc2016.pdf), (c)Springer-Verlag,14th International Conference on Service Oriented Computing (ICSOC 2016), Oct 10-13, 2016. Banff, Canada.
 
 ## Contact
-Code is currently updated and uploaded.
+Code is currently being updated and uploaded.
 Contact Hong-Linh Truong (linh.truong@aalto.fi) for further information
 
 ## Acknowledgment
 
-The work is dated back from 2015. The work is partially supported by the [H2020 U-test project](http://www.u-test.eu) and the [H2020 Inter-IoT](http://www.inter-iot-project.eu/), with a lot of in-kind effort from students and also is benefited from our collaboration with industries, who share use cases and data.
+The work is dated back from 2015. The work was partially supported by the [H2020 U-test project](http://www.u-test.eu) and the [H2020 Inter-IoT](http://www.inter-iot-project.eu/). The work has been contributed by a lot of in-kind effort from students and also has been benefited from our collaboration with industries, who share use cases and data.

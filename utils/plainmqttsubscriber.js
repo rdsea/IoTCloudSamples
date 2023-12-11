@@ -11,9 +11,9 @@ var url = process.argv[3];
 var mqtt = require('mqtt');
 //load mqtt configuration
 var option = {
-    "clean":  false,
-    "qos":2,
-    "clientId":"6ccf573c-6074-11eb-8f98-f7b88ad5abed"
+    //"clean":  false,
+    "qos":2
+    //"clientId":"6ccf573c-6074-11eb-8f98-f7b88ad5abed"
 };
 
 
