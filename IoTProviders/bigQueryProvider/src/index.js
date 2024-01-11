@@ -2,7 +2,10 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import * as services from './services.js';
 
-const PORT = 3000;
+let PORT=process.env.PORT
+if (PORT == null) {
+    PORT=3000
+}
 var app = express();
 
 // middleware declaration
@@ -14,6 +17,9 @@ var router = express.Router();
 router.get('/', (req, res) => {
     let sampleConfig = {
         datasetId: 'datasetId',
+        options: {
+            location: 'EU'
+        },
         tables: [
             {
                 id: 'tableId',
@@ -35,7 +41,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    services.createDataset(req.body.datasetId).then((dataset) => {
+    services.createDataset(req.body.datasetId,req.body.options).then((dataset) => {
         return services.createTables(req.body.datasetId, req.body.tables);
     }).then((dataset) => {
         res.json(dataset);

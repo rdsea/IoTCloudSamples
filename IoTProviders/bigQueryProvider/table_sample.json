@@ -1,0 +1,37 @@
+{
+        "datasetId": "iotcloudsample",
+        "options": {
+            "location": "EU"
+        },
+        "tables": [
+            {
+                "id": "stationdata",
+                "schema": [
+                    {
+                        "description": "station id",
+                        "mode": "REQUIRED",
+                        "name": "station_id",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "alarm id",
+                        "mode": "REQUIRED",
+                        "name": "alarm_id",
+                        "type": "INT64"
+                    },
+                    {
+                        "description": "value",
+                        "mode": "REQUIRED",
+                        "name": "value",
+                        "type": "FLOAT64"
+                    },
+                    {
+                        "description": "time stamp",
+                        "mode": "REQUIRED",
+                        "name": "timestamp",
+                        "type": "TIMESTAMP"
+                    } 
+                ]
+            }
+        ]
+}

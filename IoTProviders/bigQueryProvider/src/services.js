@@ -1,10 +1,10 @@
 import bigQuery from './bigQuery.js';
 import * as db from './data/db.js';
 
-export function createDataset(datasetId){
+export function createDataset(datasetId,options){
     let timestamp = (new Date()).getTime();
     console.log(`creating dataset ${datasetId}`);
-    return bigQuery.createDataset(datasetId).then((dataset) => {
+    return bigQuery.createDataset(datasetId,options).then((dataset) => {
         console.log(`successfully created dataset ${datasetId}`);
         let doc = {
             datasetId: datasetId,
@@ -53,6 +53,13 @@ export function deleteDataset(datasetId){
 }
 
 export function getDataset(datasetId){
-    if(!(datasetId)) return db.find().catch((err) =>  nul);
-    return db.findOne({datasetId}).catch((err) => null);
+    if (db.is_connected()) {
+        if(!(datasetId)) 
+            return db.find().catch((err) =>  null);
+        return db.findOne({datasetId}).catch((err) => null);
+    }
+    else {
+        var error_msg={status:'error', msg:'mongodb catalog is not connected'};
+        return Promise.resolve(error_msg); 
+    }
 }

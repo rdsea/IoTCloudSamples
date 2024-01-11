@@ -1,5 +1,3 @@
-
-
 import mongodb from 'mongodb'
 let MongoClient =mongodb.MongoClient;
 let MONGODB_URL = process.env.MONGODB_URL;
@@ -16,13 +14,20 @@ if (MONGODB_URL ==null){
 }
 let client = null;
 let db = null;
-
-MongoClient.connect(MONGODB_URL, {useNewUrlParser: true}).then((c) => {
-    client = c;
-    db = client.db(DB_NAME);
-});
+if (MONGODB_URL !=null) {
+    MongoClient.connect(MONGODB_URL, {useNewUrlParser: true}).then((c) => {
+        client = c;
+        db = client.db(DB_NAME);
+    });
+}
+export function is_connected(){
+    return (db != null)
+}
 
 export function insert(doc){
+    if (db == null) {
+        return null
+    }
     let collection = db.collection(COLLECTION);
     console.log(`inserting document ${JSON.stringify(doc)}`);
     return collection.insert(doc).then((res) => {
@@ -34,6 +39,9 @@ export function insert(doc){
 }
 
 export function find(query){
+    if (db == null) {
+        return null
+    }
     let collection = db.collection(COLLECTION);
     console.log(`finding one documentof ${JSON.stringify(query)}`);
     return collection.find(query).toArray().then((docs) => {
@@ -46,6 +54,9 @@ export function find(query){
 }
 
 export function findOne(query){
+    if (db == null) {
+        return null
+    }
     let collection = db.collection(COLLECTION);
     return collection.findOne(query).then((doc) => {
         return doc;
@@ -56,6 +67,10 @@ export function findOne(query){
 }
 
 export function update(query, update, options){
+    if (db == null) {
+        console.log("Database is not connected")
+        return
+    }
     let collection = db.collection(COLLECTION);
     return collection.updateMany(query, update, options).then((res) => {
         console.log(`successfully updated ${res.modifiedCount} matched with ${res.matchedCount}`);
@@ -66,6 +81,10 @@ export function update(query, update, options){
 
 
 export function remove(query, options){
+    if (db == null) {
+        console.log("Database is not connected")
+        return
+    }
     let collection = db.collection(COLLECTION);
     return collection.deleteMany(query).then((res) => {
         console.log(`successfully removed ${res.deletedCount} entries from db`);
