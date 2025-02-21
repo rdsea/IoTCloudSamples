@@ -8,7 +8,7 @@
   "author": "Linh Truong",
   "license": "Apache-2.0",
   "dependencies": {
-    "mocker-data-generator": "^2.10.0",
-    "mqtt": "^4.2.6"
+    "mocker-data-generator": "^2.12.0",
+    "mqtt": "^4.3.8"
   }
 }
